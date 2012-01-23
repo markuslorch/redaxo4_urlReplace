@@ -3,7 +3,7 @@
  * urlReplace - urlReplacer Class
  * @author m[dot]lorch[at]it-kult[dot]de Markus Lorch
  * @package redaxo4
- * @version v2.0.3
+ * @version v2.1
  *
  * Mindestens rex4.3 wegen Extensionpoint ART_CONTENT_UPDATE
  */
@@ -146,7 +146,9 @@ class urlReplacer
         }      
       }
     }
-    return $url;
+    
+    if(isset($url))
+      return $url;
   }
   
   /*
@@ -178,7 +180,9 @@ class urlReplacer
         $url = $article_id;
       }
     }
-    return $url; 
+    
+    if(isset($url))
+      return $url;
   }
 
   /*
@@ -192,7 +196,7 @@ class urlReplacer
     $name = $params['name'];
     $clang = $params['clang'];
     $params = $params['params'];
-
+    
     // Cache bei Bedarf neu erstellen
     if(!file_exists(REPLACE_TARGETS))
        $this->generate(array());
@@ -201,7 +205,7 @@ class urlReplacer
     require_once(REPLACE_TARGETS);
     
     //Pruefen, ob weiterleitung erforderlich
-    if($REPLACE_TARGET[$id][$clang] != '')
+    if(isset($REPLACE_TARGET[$id][$clang]))
     {
       if($REPLACE_TARGET[$id][$clang] == $id)
         // Nichts tun
@@ -214,7 +218,9 @@ class urlReplacer
         // Ersetzen mit benutzerdefinierter Url
         $url = $REPLACE_TARGET[$id][$clang];
     }
-    return $url;
+    
+    if(isset($url))
+      return $url;
   }
   
   /*

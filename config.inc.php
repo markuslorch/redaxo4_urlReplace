@@ -13,8 +13,8 @@ $mypage = "urlreplace";
 $REX['ADDON']['page'][$mypage] = $mypage;
 $REX['ADDON']['name'][$mypage] = 'urlReplace';
 $REX['ADDON']['perm'][$mypage] = 'urlReplace[]';
-$REX['ADDON']['version'][$mypage] = '2.0.3';
-$REX['ADDON']['author'][$mypage] = 'Markus Lorch / it.kult';
+$REX['ADDON']['version'][$mypage] = '2.1';
+$REX['ADDON']['author'][$mypage] = 'Markus Lorch / ITKULT';
 $REX['ADDON']['supportpage'][$mypage] = 'www.redaxo.org/de/forum/addons-f30/urlreplace-url-manipulation-t14712.html';
 $REX['ADDON']['path'] = dirname(__FILE__);
 
